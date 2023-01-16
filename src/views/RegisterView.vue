@@ -1,16 +1,13 @@
 <script setup>
 import { ref } from "vue";
 import { auth } from "../firebase/index";
-import {
-  createUserWithEmailAndPassword,
-  GoogleAuthProvider,
-  signInWithPopup,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup,} from "firebase/auth";
+import { useRouter } from "vue-router";
 
-const username = ref("");
 const email = ref("");
 const password1 = ref("");
 const password2 = ref("");
+const router = useRouter();
 
 const registerUserByEmail = async () => {
   if (password1.value !== password2.value) {
@@ -19,6 +16,7 @@ const registerUserByEmail = async () => {
   }
   try {
     await createUserWithEmailAndPassword(auth, email.value, password1.value);
+    router.push("./purchase")
   } catch (error) {
     console.log(error);
   }
@@ -28,6 +26,7 @@ const registerUserByGoogle = async () => {
   const provider = new GoogleAuthProvider();
   const user = await signInWithPopup(auth, provider);
   console.log(user);
+  router.push("./purchase")
 };
 </script>
 
@@ -39,7 +38,6 @@ const registerUserByGoogle = async () => {
     <hr />
     <h2>Register by email</h2>
     <form @submit.prevent="registerUserByEmail()">
-      <input v-model="username" type="text" placeholder="username" /> <br />
       <input v-model="email" type="email" placeholder="email" /> <br />
       <input v-model="password1" type="password" placeholder="password" /> <br />
       <input v-model="password2" type="password" placeholder="re-enter password" /> <br />
@@ -48,4 +46,6 @@ const registerUserByGoogle = async () => {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>

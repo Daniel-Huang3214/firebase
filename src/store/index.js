@@ -12,12 +12,12 @@ export const useStore = defineStore('store', {
   },
   actions: {
     async populateFirestore() {
-      const genres = new Map([[28, "Action"], [10751, "Family"], [878, "Science Fiction"], [12, "Adventure"], [14, "Fantasy"]]);
+      const genres = new Map([[27, "Horror"], [80, "Crime"], [18, "Drama"], [36, "History"], [10752, "War"]]);
 
       genres.forEach(async (value, key) => {
         let data = (await axios.get("https://api.themoviedb.org/3/discover/movie", {
           params: {
-            api_key: "Your Key",
+            api_key: "0dcabfe51b80fa2de3e80d7d256e0e81",
             with_genres: key,
             include_adult: false,
           }
@@ -33,6 +33,7 @@ export const useStore = defineStore('store', {
     },
     async getMovies(genre) {
       this.movies = (await getDoc(doc(firestore, "Genre", genre))).data().data;
+      console.log(this.movies);
     },
     addToCart(id, data) {
       this.cart.set(id, data);
