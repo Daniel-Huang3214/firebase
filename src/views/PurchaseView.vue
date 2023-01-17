@@ -81,7 +81,7 @@ const search = async (direction) => {
       <img v-for="movie in searchResults" :id="movie.id" @click="openModal(movie.id)"
         :src="`https://image.tmdb.org/t/p/w500${movie.image}`" />
     </template>
-    <template v-else>
+    <template v-if="!searchResults.length">
       <img v-for="movie in store.movies" :id="movie.id" @click="openModal(movie.id)"
         :src="`https://image.tmdb.org/t/p/w500${movie.image}`" />
     </template>

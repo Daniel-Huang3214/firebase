@@ -13,6 +13,19 @@ let data = (
     },
   })
 ).data;
+
+const LOOL = () => {
+  console.log(data);
+}
+
+// .revenue
+// .original_language
+// .budget
+// .tagline
+// .overview
+// .vote_count
+// .vote_average
+
 </script>
 
 <template>
@@ -21,6 +34,7 @@ let data = (
       <div class="modal-inner-container">
         <button class="close-button" @click="emits('toggleModal')">X</button>
         <h1>{{ data.title }}</h1>
+        <button @click="LOOL">test</button>
         <button
           @click="
             store.addToCart(props.id, {
