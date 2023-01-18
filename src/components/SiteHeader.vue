@@ -4,13 +4,14 @@
 <template>
   
   <div class="header-container">
-    <h1>Amazon Lime</h1>
+    <h1>Amazon Purple</h1>
     <RouterLink to="/login" custom v-slot="{ navigate }">
       <button @click="navigate" role="link">Login</button>
     </RouterLink>
     <RouterLink to="/register" custom v-slot="{ navigate }">
       <button @click="navigate" role="link">Register</button>
     </RouterLink>
+    <img class="thanos" src="./images/thanos.png">
   </div>
 </template>
 
@@ -24,6 +25,14 @@
   border: rgba(89, 5, 184, 0.637) solid 5px;
   border-radius: 5%;
   margin: 20px;
+}
+
+.thanos {
+  display: -webkit-box;
+  margin-left: auto;
+  height: 60vh;
+  width: 30vw;
+  filter:blur(0.75px);
 }
 
 h1 {

@@ -5,7 +5,7 @@
 <template>
   <div>
     <img class="background" src="./images/hero.png">
-    <img class="thanos" src="./images/thanos.png">
+    <img src="./images/amazonprime.png">
   </div>
 </template>
 
@@ -23,11 +23,4 @@ h1 {
   width: 100vw;
 }
 
-.thanos {
-  display: -webkit-box;
-  margin-left: auto;
-  height: 60vh;
-  width: 30vw;
-  filter:blur(0.75px);
-}
 </style>
