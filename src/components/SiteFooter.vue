@@ -25,6 +25,7 @@ h2 {
 }
 
 .grid-container {
+  border-radius: 5%;
   background-color: #383636;
   margin: 20px;
   display: grid;

@@ -11,7 +11,7 @@
     <RouterLink to="/register" custom v-slot="{ navigate }">
       <button @click="navigate" role="link">Register</button>
     </RouterLink>
-    <img class="thanos" src="./images/thanos.png">
+    <img class="logo" src="./images/logo.png">
   </div>
 </template>
 
@@ -27,12 +27,12 @@
   margin: 20px;
 }
 
-.thanos {
-  display: -webkit-box;
-  margin-left: auto;
-  height: 60vh;
-  width: 30vw;
-  filter:blur(0.75px);
+.logo {
+  position: absolute;
+  height: 15vh;
+  width: 10vw;
+  left: 5vw;
+  top: 3.5vh;
 }
 
 h1 {
