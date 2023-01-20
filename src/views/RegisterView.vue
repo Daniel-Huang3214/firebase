@@ -32,7 +32,7 @@ const registerUserByGoogle = async () => {
 
 <template>
   <div class="login-container">
-    <div class="login-UI">
+    <div class="register-UI">
       <h2>Register by email</h2>
       <form @submit.prevent="registerUserByEmail()">
         <input v-model="email" type="email" placeholder="email" /> <br />
@@ -41,9 +41,11 @@ const registerUserByGoogle = async () => {
         <input type="submit" value="Register" />
       </form>
       <hr />
+      <br />
+      <div class="google-UI">
       <h2>Register by Google</h2>
       <button @click="registerUserByGoogle">Google</button>
-
+      </div>
     </div>
   </div>
   <img class="background" src="../components/images/hero.png">
@@ -62,7 +64,10 @@ input {
   text-align: center;
 }
 
-.login-UI {
+.google-UI {
+  text-align: center;
+}
+.register-UI {
   grid-column-start: 2;
   grid-row-start: 2;
   background-color: #383636;

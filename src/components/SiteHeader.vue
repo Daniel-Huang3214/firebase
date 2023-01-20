@@ -32,7 +32,7 @@
   height: 15vh;
   width: 10vw;
   left: 5vw;
-  top: 3.5vh;
+  top: 3vh;
 }
 
 h1 {

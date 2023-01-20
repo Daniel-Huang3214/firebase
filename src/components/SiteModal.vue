@@ -21,7 +21,6 @@ const LOOL = () => {
 // .revenue
 // .original_language
 // .budget
-// .tagline
 // .overview
 // .vote_count
 // .vote_average
@@ -34,17 +33,22 @@ const LOOL = () => {
       <div class="modal-inner-container">
         <button class="close-button" @click="emits('toggleModal')">X</button>
         <h1>{{ data.title }}</h1>
+        <p class="tagline">"{{ data.tagline }}"</p>
+        <img class="poster" :src="`https://image.tmdb.org/t/p/w500${data.poster_path}`"/>
+        <p class="overview">{{ data.overview}}</p>
+        <p>{{ data.original_language }}</p>
+        <p>{{ data.budget }}</p>
+        <p>{{ data.vote_count }}</p>
+        <p>{{ data.vote_average }}</p>
         <button @click="LOOL">test</button>
-        <button
-          @click="
-            store.addToCart(props.id, {
-              id: data.id,
-              poster: data.poster_path,
-              title: data.title,
-              date: data.release_date,
-            })
-          "
-        >
+        <button @click="
+          store.addToCart(props.id, {
+            id: data.id,
+            poster: data.poster_path,
+            title: data.title,
+            date: data.release_date,
+          })
+        ">
           Purchase
         </button>
       </div>
@@ -53,6 +57,34 @@ const LOOL = () => {
 </template>
 
 <style scoped>
+
+/* button {
+  grid-column-start: 2;
+  grid-row-start: 3;
+} */
+
+h1 {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.overview {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+.poster {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  height: 35vh;
+  margin: 10px;
+}
+
+.tagline {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  position: relative;
+  top: 5vh;
+}
 .modal-outer-container {
   position: fixed;
   top: 0;
@@ -62,15 +94,20 @@ const LOOL = () => {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background: #00000099;
+  background: #141313d5;
   z-index: 3;
 }
 
+.modal-inner-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 25% 25% 25% 25%;
+}
 .modal-outer-container .modal-inner-container {
-  background-color: #1f2123;
+  background-color: black;
   color: white;
-  width: clamp(280px, 100%, 800px);
-  height: 400px;
+  width: 70vw;
+  height: 60vh;
   position: relative;
 }
 
