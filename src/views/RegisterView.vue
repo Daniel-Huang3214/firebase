@@ -10,8 +10,9 @@ const password2 = ref("");
 const router = useRouter();
 
 const registerUserByEmail = async () => {
-  if (password1.value !== password2.value) {
+  if ((password1.value !== password2.value) || password2.value >= 6) {
     console.log("Password issue");
+    alert("Password must be 6 letters or more");
     return;
   }
   try {
@@ -19,6 +20,7 @@ const registerUserByEmail = async () => {
     router.push("./purchase")
   } catch (error) {
     console.log(error);
+    alert("The user already exist/Your password is too short");
   }
 };
 
