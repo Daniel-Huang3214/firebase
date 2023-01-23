@@ -52,7 +52,6 @@ const search = async (direction) => {
   });
 };
 
-// await store.populateFirestore();
 </script>
 
 <template>

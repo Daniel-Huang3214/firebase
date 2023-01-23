@@ -33,7 +33,6 @@ export const useStore = defineStore('store', {
     },
     async getMovies(genre) {
       this.movies = (await getDoc(doc(firestore, "Genre", genre))).data().data;
-      console.log(this.movies);
     },
     addToCart(id, data) {
       this.cart.set(id, data);

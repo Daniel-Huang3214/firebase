@@ -6,21 +6,15 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 const email = ref("");
 const password = ref("");
-const fail = ref(false);
 
 const auth = getAuth();
-console.log(auth);
+
 const login = async () => {
   await signInWithEmailAndPassword(auth, email.value, password.value)
     .then((userCredential) => {
-      console.log(userCredential);
-      console.log("yes");
       router.push("./purchase")
     })
     .catch((error) => {
-      console.log(error.code);
-      console.log(error.message);
-      fail.value = error;
       alert("Wrong Email/Password");
     })
 };

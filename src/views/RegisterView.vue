@@ -11,7 +11,6 @@ const router = useRouter();
 
 const registerUserByEmail = async () => {
   if ((password1.value !== password2.value) || password2.value >= 6) {
-    console.log("Password issue");
     alert("Password must be 6 letters or more");
     return;
   }
@@ -19,15 +18,12 @@ const registerUserByEmail = async () => {
     await createUserWithEmailAndPassword(auth, email.value, password1.value);
     router.push("./purchase")
   } catch (error) {
-    console.log(error);
     alert("The user already exist/Your password is too short");
   }
 };
 
 const registerUserByGoogle = async () => {
   const provider = new GoogleAuthProvider();
-  const user = await signInWithPopup(auth, provider);
-  console.log(user);
   router.push("./purchase")
 };
 </script>
@@ -45,8 +41,8 @@ const registerUserByGoogle = async () => {
       <hr />
       <br />
       <div class="google-UI">
-      <h2>Register by Google</h2>
-      <button @click="registerUserByGoogle">Google</button>
+        <h2>Register by Google</h2>
+        <button @click="registerUserByGoogle">Google</button>
       </div>
     </div>
   </div>
@@ -54,21 +50,19 @@ const registerUserByGoogle = async () => {
 </template>
 
 <style scoped>
-h2,
-p {
+h2, p {
   -webkit-text-stroke: 1px rgb(250, 250, 250);
   color: white;
 }
 
-h2,
-form,
-input {
+h2, form, input {
   text-align: center;
 }
 
 .google-UI {
   text-align: center;
 }
+
 .register-UI {
   grid-column-start: 2;
   grid-row-start: 2;

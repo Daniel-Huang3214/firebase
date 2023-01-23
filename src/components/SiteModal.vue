@@ -50,11 +50,6 @@ const purchase = () => {
 </template>
 
 <style scoped>
-/* button {
-  grid-column-start: 2;
-  grid-row-start: 3;
-} */
-
 h1 {
   grid-column-start: 1;
   grid-row-start: 1;

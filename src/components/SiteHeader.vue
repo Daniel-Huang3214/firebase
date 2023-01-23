@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  
+
   <div class="header-container">
     <h1>Amazon Purple</h1>
     <RouterLink to="/login" custom v-slot="{ navigate }">

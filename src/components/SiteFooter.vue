@@ -16,7 +16,6 @@
 </template>
 
 <style scoped>
-
 h2 {
   font-family: monaco, Consolas, "Lucida Console", monospace;
   font-size: 30px;
