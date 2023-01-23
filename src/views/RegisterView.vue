@@ -24,6 +24,7 @@ const registerUserByEmail = async () => {
 
 const registerUserByGoogle = async () => {
   const provider = new GoogleAuthProvider();
+  await signInWithPopup(auth, provider);
   router.push("./purchase")
 };
 </script>

@@ -21,8 +21,7 @@ const login = async () => {
 
 const GoogleLogin = async () => {
   const provider = new GoogleAuthProvider();
-  const user = await signInWithPopup(auth, provider);
-  console.log(user);
+  await signInWithPopup(auth, provider);
   router.push("./purchase")
 };
 </script>

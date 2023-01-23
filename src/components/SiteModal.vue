@@ -63,7 +63,8 @@ h1 {
 
 .budget {
   grid-column-start: 3;
-  grid-row-start: 3;
+  grid-row-start: 2;
+  margin-top: 8vh;
 }
 
 .vote {
@@ -72,12 +73,13 @@ h1 {
 }
 
 .average {
-  margin-top: 10vh;
+  margin-top: 5vh;
 }
 
 .original-language {
   grid-column-start: 3;
   grid-row-start: 1;
+  margin-top: 10vh;
 }
 
 .purchase {
@@ -86,6 +88,7 @@ h1 {
   height: 5vh;
   width: 6vw;
   margin: auto;
+  margin-top: 20vh;
 }
 
 .overview {
